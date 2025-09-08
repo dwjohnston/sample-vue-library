@@ -1,32 +1,12 @@
 <script setup lang="ts">
-import {provide} from "vue";
-import TodoList from './example1/TodoList.vue';
-import TodoList2 from './example2/TodoList.vue'
-import TodoList3 from './example3/TodoList.vue';
 
-;
-import { getTodos } from "./services/getTodos";
-import { container } from "tsyringe";
-import { ProductionTodoService, TodoService } from "./example3/Todo.service";
-
-// Native vue inejction
-provide("getTodos", getTodos )
-
-// injection via tsyringe
-container.register(TodoService, ProductionTodoService);
+import Sandbox from "./table/Sandbox.vue";
 
 
 </script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
-  <TodoList/>
-  <TodoList2/>
-  <TodoList3/>
+  <Sandbox/>
 </template>
 
 <style scoped></style>
