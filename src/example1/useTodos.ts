@@ -1,16 +1,14 @@
-import { getTodos } from '@/services/getTodos'
-import { onMounted, ref } from 'vue'
+import { getTodos, type Todo } from '@/services/getTodos'
+import { onMounted, ref, type Ref } from 'vue'
 
-export type Todo=  {
-  id: number
-  text: string
-}
 
-export function useTodos() {
+export function useTodos() : Ref<Array<Todo>> {
   const todos = ref<Todo[]>([])
 
   onMounted(async () => {
     const gottenTodos = await getTodos(); 
+    console.log(gottenTodos);
     todos.value = gottenTodos;
   })
+  return todos;
 }

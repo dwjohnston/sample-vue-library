@@ -4,6 +4,7 @@ export type Todo=  {
 }
 
 export async function getTodos() : Promise<Array<Todo>>{
+    console.log("x")
 
     await new Promise((res) => setTimeout(res, 500)); 
     return [

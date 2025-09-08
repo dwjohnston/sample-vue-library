@@ -8,14 +8,16 @@
 </template>
 
 <script setup lang="ts">
-import { type  Todo } from '@/services/getTodos'
+import { type Todo } from '@/services/getTodos'
+import { container } from 'tsyringe';
 import { inject, onMounted, ref } from 'vue'
+import { TodoService } from './Todo.service.ts';
 
-const getTodos = inject('getTodos')
+const todoService = container.resolve(TodoService)
 const todos = ref<Array<Todo>>([]);
 
 onMounted(async () => {
-    const gottenTodos = await getTodos(); 
+    const gottenTodos = await todoService.getTodos(); 
     todos.value = gottenTodos;
 }); 
 
