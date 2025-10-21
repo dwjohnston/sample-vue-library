@@ -21,6 +21,7 @@ export default defineConfig({
       formats: ["es", "umd"],
 
       fileName: (format) => `main.${format}.js`,
+      cssFileName: "style.css",
     },
     rollupOptions: {
       external: ["vue"], // Exclude Vue from the bundle
