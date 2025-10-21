@@ -10,7 +10,7 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/main.d.ts",
+        "types": "./dist/main.es.d.ts",
         "default": "./dist/main.es.js"
       }
     }
