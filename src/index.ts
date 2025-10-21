@@ -1,2 +1,3 @@
-export { default as SomeComponent } from "./basic/SomeComponent.vue";
-export { default as SomeOtherComponent } from "./basic2/SomeOtherComponent.vue";
+export { default as SomeComponent } from "./SomeComponent/SomeComponent.vue";
+export { default as SomeOtherComponent } from "./SomeOtherComponent/SomeOtherComponent.vue";
+export { default as Box } from "./Box/Box.vue";

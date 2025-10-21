@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-defineProps();
+defineProps<{ bar: number }>();
 </script>
 <template>
   <div>Some Other Component!</div>

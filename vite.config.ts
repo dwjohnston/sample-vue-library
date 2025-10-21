@@ -8,7 +8,9 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      insertTypesEntry: true,
+      insertTypesEntry: false,
+      rollupTypes: true,
+
       tsconfigPath: "./tsconfig.app.json",
     }),
   ], // Include dts plugin
@@ -16,13 +18,18 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "MyVueLibrary", // Global variable name if using UMD format
-      formats: ["es"],
+      formats: ["es", "umd"],
 
       fileName: (format) => `main.${format}.js`,
     },
     rollupOptions: {
       external: ["vue"], // Exclude Vue from the bundle
       output: {
+        preserveModules: false,
+        manualChunks: function () {
+          return "a";
+        },
+        inlineDynamicImports: false,
         globals: {
           vue: "Vue", // Global variable name for Vue if external
         },

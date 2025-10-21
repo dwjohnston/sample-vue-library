@@ -1,12 +1,7 @@
-<script setup lang="ts">
-
-import Sandbox from "./table/Sandbox.vue";
-
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <Sandbox/>
+  <Sandbox />
 </template>
 
 <style scoped></style>
