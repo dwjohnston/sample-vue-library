@@ -1,7 +1,7 @@
 {
-  "name": "vue-boilerplate",
+  "name": "sample-vue-library",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
