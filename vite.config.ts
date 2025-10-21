@@ -1,22 +1,29 @@
-import { fileURLToPath, URL } from "node:url";
-
+// vite.config.ts
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import vueDevTools from "vite-plugin-vue-devtools";
-import dts from "vite-plugin-dts";
+import { resolve } from "path";
+import dts from "vite-plugin-dts"; // For generating TypeScript declaration files
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     dts({
-      tsconfigPath: "./tsconfig.build.json",
+      insertTypesEntry: true,
     }),
-    // vueDevTools(),
-  ],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+  ], // Include dts plugin
+  build: {
+    lib: {
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "MyVueLibrary", // Global variable name if using UMD format
+      fileName: (format) => `main.${format}.js`,
+    },
+    rollupOptions: {
+      external: ["vue"], // Exclude Vue from the bundle
+      output: {
+        globals: {
+          vue: "Vue", // Global variable name for Vue if external
+        },
+      },
     },
   },
 });
