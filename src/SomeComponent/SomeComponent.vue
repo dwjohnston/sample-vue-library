@@ -1,6 +1,12 @@
 <script lang="ts" setup>
-defineProps<{ foo: string }>()
+defineProps<{ foo: string }>();
 </script>
 <template>
-  <div>Hello world!</div>
+  <div>Hello {{ foo }}</div>
 </template>
+<style scoped>
+div {
+  border: dotted 1px red;
+  padding: 1em;
+}
+</style>
