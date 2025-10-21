@@ -1,0 +1,2 @@
+# Important otherwise npm will ignore this
+# https://stackoverflow.com/questions/56011430/npm-install-from-repo-not-running-prepare
