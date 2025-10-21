@@ -10,8 +10,8 @@
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/main.es.js",
-        "types": "./dist/main.d.ts"
+        "types": "./dist/main.d.ts",
+        "default": "./dist/main.es.js"
       }
     }
   },

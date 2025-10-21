@@ -9,12 +9,15 @@ export default defineConfig({
     vue(),
     dts({
       insertTypesEntry: true,
+      tsconfigPath: "./tsconfig.app.json",
     }),
   ], // Include dts plugin
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "MyVueLibrary", // Global variable name if using UMD format
+      formats: ["es"],
+
       fileName: (format) => `main.${format}.js`,
     },
     rollupOptions: {
