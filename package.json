@@ -15,7 +15,7 @@
     "type-check": "vue-tsc --build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "postinstall": "echo hello world!"
+    "prepare": "echo hello world!"
   },
   "dependencies": {
     "reflect-metadata": "^0.2.2",
