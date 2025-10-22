@@ -1,12 +1,14 @@
 {
   "name": "sample-vue-library",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "type": "module",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "module": "./dist/main.es.js",
   "exports": {
     ".": {
@@ -14,7 +16,7 @@
         "types": "./dist/main.es.d.ts",
         "default": "./dist/main.es.js"
       }
-    }, 
+    },
     "./styles.css": "./dist/styles.css"
   },
   "scripts": {
