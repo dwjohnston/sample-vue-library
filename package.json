@@ -6,6 +6,7 @@
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
+  "files": ["dist"],
   "module": "./dist/main.es.js",
   "exports": {
     ".": {
@@ -13,7 +14,8 @@
         "types": "./dist/main.es.d.ts",
         "default": "./dist/main.es.js"
       }
-    }
+    }, 
+    "./styles.css": "./dist/styles.css"
   },
   "scripts": {
     "dev": "vite",
