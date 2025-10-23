@@ -1,16 +1,9 @@
-Demonstrates three different ways of defining dependency behaviour in different consuming contexts for a vue component. 
+This is a demonstration package demonstrating publishing a vue component library as an npm package.
 
+It's all pretty straight forward. It's a create vite app as base.
 
-Example 1 - 
+The magic is basically in the vite.config.ts using [vite library mode](https://vite.dev/guide/build.html#library-mode)
 
-Direct module calls. Uses vi.mock to define the behaviour. 
+Also note the `exports` and `files` properties in package.json
 
-The problem with this is that this works for vitest only, it won't work for storybook. 
-
-Example 2 - 
-
-Inject via vue's native dependency injection mechanism. 
-
-Example 3 - 
-
-Inject via tsyringe DI framework. 
+This configuration does bundle it all into single file, which works for my purposes - but might not be so good for something needing better treeshaking.
