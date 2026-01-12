@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ComponentWithSvg from "./ComponentWithSvg/ComponentWithSvg.vue";
+</script>
 
 <template>
-  <Sandbox />
+  Hello
+
+  <ComponentWithSvg />
 </template>
 
 <style scoped></style>
