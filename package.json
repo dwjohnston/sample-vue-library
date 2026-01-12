@@ -17,6 +17,7 @@
         "default": "./dist/main.es.js"
       }
     },
+    "./svgs/*.svg": "./dist/svgs",
     "./styles.css": "./dist/styles.css"
   },
   "scripts": {
@@ -28,7 +29,7 @@
     "type-check": "vue-tsc --build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "npm run build"
+    "prepare": "npm run build && cp -r src/svgs dist"
   },
   "dependencies": {
     "reflect-metadata": "^0.2.2",
